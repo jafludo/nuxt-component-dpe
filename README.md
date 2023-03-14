@@ -11,4 +11,9 @@ npm install nuxt-component-dpe
 <dpe valueDPE="0" :style="'width:25%;'"/>
 ```
 3. Result
+
 ![](assets/githubimg.PNG)
+
+## Compatibility :
+
+![](assets/NuxtJS_Logo.png)
