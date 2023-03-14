@@ -4,7 +4,7 @@
             <div class="legend_top">
                 <p>Logement économe</p>
             </div>
-            <div class="etiquette">
+            <div id='etiquette_ener' class="etiquette">
                 <div v-for="(e, index) in dpe" :key="index">
                     <div class="grp-et">
                         <div class="etiquette_base" :style="'background : ' + e.color + ' ; width: ' + e.width">
@@ -42,13 +42,13 @@ export default {
     data() {
         return {
             dpe: [
-                { text: "≤ 50", letter: "A", color: "#319834", width: '35%', colortext: 'black', max: 0, maxrange: 50 },
-                { text: "51 à 110", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', min: 0, max: 32 + 4, minrange: 51, maxrange: 110 },
-                { text: "111 à 210", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', min: 32 + 4, max: 64 + 8, minrange: 111, maxrange: 210 },
-                { text: "211 à 350", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', min: 64 + 8, max: 96 + 12, minrange: 211, maxrange: 350 },
-                { text: "351 à 540", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', min: 96 + 12, max: 128 + 16, minrange: 351, maxrange: 540 },
-                { text: "541 à 750", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', min: 128 + 16, max: 160 + 20, minrange: 541, maxrange: 750 },
-                { text: "> 750", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', min: 160 + 20, max: 192 + 24, minrange: 751, maxrange: 752 },
+                { text: "≤ 50", letter: "A", color: "#319834", width: '35%', colortext: 'black', minrange: 0, maxrange: 50, more: 0, min: 0 },
+                { text: "51 à 110", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 51, maxrange: 110, more: 4, min: 36, max: 72 },
+                { text: "111 à 210", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', minrange: 111, maxrange: 210, more: 8, min: 72, max: 108 },
+                { text: "211 à 350", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', minrange: 211, maxrange: 350, more: 12, min: 108, max: 144 },
+                { text: "351 à 540", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', minrange: 351, maxrange: 540, more: 16, min: 144, max: 180 },
+                { text: "541 à 750", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 541, maxrange: 750, more: 20, min: 180, max: 214 },
+                { text: "> 750", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 750, maxrange: 9999, more: 24, min: 214, max: 250 },
             ],
             ges: [
                 { text: "≤ 5", letter: "A", color: "#f2eff4" },
@@ -63,26 +63,24 @@ export default {
         }
     },
     created() {
-
     },
     destroyed() {
-
     },
     mounted() {
         let dpefind = this.dpe.find(item => item.minrange <= this.valueDPE && item.maxrange >= this.valueDPE);
         dpefind == undefined ? dpefind = this.dpe[this.dpe.length - 1] : '';
+        console.log(dpefind)
         this.widthDaron = document.getElementById('dpe_div').offsetWidth;
+        let heightDaron = document.getElementById('etiquette_ener').offsetHeight;
         // let step = (dpefind.max / (dpefind.maxrange - dpefind.minrange));
-        let DynamicHeight = (parseFloat(dpefind.max) / 720) * (parseFloat(this.valueDPE) - parseFloat(dpefind.min)*(dpefind.max / (dpefind.maxrange - dpefind.minrange)));
-        console.log(dpefind.min + DynamicHeight)
+        let DynamicHeight = dpefind.min;
+        console.log(DynamicHeight)
         var r = document.querySelector(':root');
-        r.style.setProperty('--height', (DynamicHeight)+"px");
+        r.style.setProperty('--height', (DynamicHeight) + "px");
     },
     methods: {
-
     }
 }
-
 </script>
 <style lang="scss">
 :root {
@@ -95,9 +93,9 @@ export default {
 
 #dpe_div {
     position: relative;
-    width: 50%;
     max-height: fit-content;
     height: fit-content;
+    width: 100%;
 
     .grp-et {
         display: flex;
