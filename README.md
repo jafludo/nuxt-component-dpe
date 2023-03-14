@@ -15,7 +15,7 @@ npm install nuxt-component-dpe
 
 - Without Export Mode (PNG):
 ```
-<dpe valueDPE="0" :style="'width:25%;'" exportMode=""/>
+<dpe valueDPE="0" :style="'width:25%;'"/>
 ```
 
 ### 3. Result
