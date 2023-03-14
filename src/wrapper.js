@@ -1,5 +1,5 @@
 // Importation de notre composant Vue
-import component from './my-component.vue';
+import component from './dpe.vue';
 
 // Déclaration de la méthode d'installation utilisée via Vue.use(...)
 export function install(Vue) {
@@ -7,7 +7,7 @@ export function install(Vue) {
   
 	install.installed = true;
   
-	Vue.component('MyComponent', component);
+	Vue.component('dpe', component);
 }
 
 // Création du module à destionation Vue.use(...)

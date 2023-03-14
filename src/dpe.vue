@@ -49,7 +49,7 @@
 <script lang="js">
 import * as htmlToImage from 'html-to-image';
 export default {
-    name: 'DpeGes',
+    name: 'dpe',
     props: ['valueDPE', 'exportMode'],
     data() {
         return {
