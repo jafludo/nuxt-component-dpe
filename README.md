@@ -16,4 +16,4 @@ npm install nuxt-component-dpe
 
 ## Compatibility :
 
-![](assets/NuxtJS_Logo.png)
+![](assets/Nuxtjs_logo.png)
