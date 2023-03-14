@@ -1,6 +1,6 @@
 {
   "name": "nuxt-component-dpe",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Use custom components DPE on Nuxt",
   "main": "dist/my-component.umd.js",
   "module": "dist/my-component.esm.js",
@@ -31,5 +31,8 @@
     "rollup-plugin-vue": "^5.0.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
+  },
+  "publishConfig": {
+    "@jafludo:registry": "https://npm.pkg.github.com"
   }
 }
