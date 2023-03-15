@@ -1,6 +1,6 @@
 {
   "name": "nuxt-component-dpe",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "description": "Use custom components DPE on Nuxt",
   "main": "dist/dpe.umd.js",
   "module": "dist/dpe.esm.js",
