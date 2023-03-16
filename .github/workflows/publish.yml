@@ -1,21 +1,39 @@
-name: Publish to NPM
+name: Create Release and Publish
+
+# Trigger the create release workflow
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
+
 jobs:
-  build:
+  release:
+    name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
-      - name: Install dependencies and build 🔧
-        run: npm ci && npm run build
-      - name: Publish package on NPM 📦
-        run: npm publish
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+  publish-gpr:
+    needs: release # After release is created then run the second workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+          registry-url: https://npm.pkg.github.com/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
