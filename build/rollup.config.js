@@ -4,7 +4,7 @@ import buble from '@rollup/plugin-buble'; // Permet un polyfill de notre code po
 export default {
   input: 'src/wrapper.js', // Fichier relatif en partant de notre fichier package.json
   output: {
-    name: 'MyComponent',
+    name: 'dpe',
     exports: 'named',
   },
   plugins: [
