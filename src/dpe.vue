@@ -5,7 +5,7 @@
                 <p>Logement économe</p>
             </div>
             <div id='etiquette_ener' class="etiquette">
-                <div v-for="(e, index) in dpe" :key="index">
+                <div v-for="(e, index) in dpe" :key="refreshDPE">
                     <div class="grp-et">
                         <div class="etiquette_base" :style="'background : ' + e.color + ' ; width: ' + e.width">
                             <p :style="'color : ' + e.colortext + ' ; padding-left: 8px'">{{ e.text }}</p>
@@ -50,17 +50,55 @@
 import * as htmlToImage from 'html-to-image';
 export default {
     name: 'dpe',
-    props: ['valueDPE', 'exportMode'],
+    props: ['valueDPE', 'exportMode', 'typeDPE'],
     data() {
         return {
             dpe: [
+                { text: "≤ 50", letter: "A", color: "#319834", width: '35%', colortext: 'black', minrange: 0, maxrange: 50, min: 0 },
+                { text: "51 à 90", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 51, maxrange: 90, min: 36 },
+                { text: "91 à 150", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', minrange: 91, maxrange: 150, min: 72 },
+                { text: "151 à 230", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', minrange: 151, maxrange: 230, min: 108 },
+                { text: "231 à 330", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', minrange: 231, maxrange: 330, min: 144 },
+                { text: "331 à 450", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 331, maxrange: 450, min: 180 },
+                { text: "> 450", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 450, maxrange: 9999, min: 216 },
+            ],
+            dpeTertiaire: [
+                { text: "≤ 50", letter: "A", color: "#319834", width: '34%', colortext: 'black', minrange: 0, maxrange: 50, min: 0 },
+                { text: "51 à 90", letter: "B", color: "#33cc31", width: '41%', colortext: 'black', minrange: 51, maxrange: 90, min: 36 },
+                { text: "91 à 150", letter: "C", color: "#cbfc34", width: '48%', colortext: 'black', minrange: 91, maxrange: 150, min: 72 },
+                { text: "150 à 230", letter: "D", color: "#fbfe06", width: '56%', colortext: 'black', minrange: 150, maxrange: 230, min: 108 },
+                { text: "231 à 330", letter: "E", color: "#fbcc05", width: '64%', colortext: 'black', minrange: 231, maxrange: 330, min: 144 },
+                { text: "331 à 450", letter: "F", color: "#fc9935", width: '71%', colortext: 'black', minrange: 331, maxrange: 450, min: 180 },
+                { text: "451 à 590", letter: "G", color: "#fc0205", width: '78%', colortext: 'black', minrange: 451, maxrange: 590, min: 216 },
+                { text: "591 à 750", letter: "H", color: "#4d4d4d", width: '85%', colortext: 'black', minrange: 591, maxrange: 750, min: 252 },
+                { text: "> 750", letter: "I", color: "#000000", width: '100%', colortext: 'white', minrange: 750, maxrange: 9999, min: 288 },
+            ],
+            dpePublic: [
+                { text: "≤ 30", letter: "A", color: "#319834", width: '35%', colortext: 'black', minrange: 0, maxrange: 30, min: 0 },
+                { text: "31 à 90", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 51, maxrange: 90, min: 36 },
+                { text: "91 à 170", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', minrange: 91, maxrange: 170, min: 72 },
+                { text: "171 à 270", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', minrange: 171, maxrange: 270, min: 108 },
+                { text: "271 à 380", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', minrange: 271, maxrange: 380, min: 144 },
+                { text: "381 à 510", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 381, maxrange: 510, min: 180 },
+                { text: "> 510", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 510, maxrange: 9999, min: 214 },
+            ],
+            dpeBureaux: [
                 { text: "≤ 50", letter: "A", color: "#319834", width: '35%', colortext: 'black', minrange: 0, maxrange: 50, more: 0, min: 0 },
-                { text: "51 à 110", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 51, maxrange: 110, more: 4, min: 36, max: 72 },
-                { text: "111 à 210", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', minrange: 111, maxrange: 210, more: 8, min: 72, max: 108 },
-                { text: "211 à 350", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', minrange: 211, maxrange: 350, more: 12, min: 108, max: 144 },
-                { text: "351 à 540", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', minrange: 351, maxrange: 540, more: 16, min: 144, max: 180 },
-                { text: "541 à 750", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 541, maxrange: 750, more: 20, min: 180, max: 214 },
-                { text: "> 750", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 750, maxrange: 9999, more: 24, min: 214, max: 250 },
+                { text: "51 à 110", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 51, maxrange: 110, min: 36, max: 72 },
+                { text: "111 à 210", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', minrange: 111, maxrange: 210, min: 72, max: 108 },
+                { text: "211 à 350", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', minrange: 211, maxrange: 350, min: 108, max: 144 },
+                { text: "351 à 540", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', minrange: 351, maxrange: 540, min: 144, max: 180 },
+                { text: "541 à 750", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 541, maxrange: 750, min: 180, max: 214 },
+                { text: "> 750", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 750, maxrange: 9999, min: 214, max: 250 },
+            ],
+            dpeOccContinue: [
+                { text: "≤ 100", letter: "A", color: "#319834", width: '35%', colortext: 'black', minrange: 0, maxrange: 100, min: 0 },
+                { text: "101 à 210", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 101, maxrange: 210, min: 36 },
+                { text: "211 à 370", letter: "C", color: "#cbfc34", width: '55%', colortext: 'black', minrange: 211, maxrange: 370, min: 72 },
+                { text: "371 à 580", letter: "D", color: "#fbfe06", width: '65%', colortext: 'black', minrange: 371, maxrange: 580, min: 108 },
+                { text: "581 à 830", letter: "E", color: "#fbcc05", width: '75%', colortext: 'black', minrange: 581, maxrange: 830, min: 144 },
+                { text: "831 à 1130", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 831, maxrange: 1130, min: 180 },
+                { text: "> 1130", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 1130, maxrange: 9999, min: 214 },
             ],
             ges: [
                 { text: "≤ 5", letter: "A", color: "#f2eff4" },
@@ -71,8 +109,59 @@ export default {
                 { text: "101 à 145", letter: "F", color: "#a94cee" },
                 { text: "> 145", letter: "G", color: "#8b1ae1" },
             ],
+            gesTertiaire: [
+                { text: "≤ 5", letter: "A", color: "#f2eff4" },
+                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
+                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
+                { text: "31 à 60", letter: "D", color: "#cc93f4" },
+                { text: "61 à 100", letter: "E", color: "#bb72f3" },
+                { text: "101 à 145", letter: "F", color: "#a94cee" },
+                { text: "> 145", letter: "G", color: "#8b1ae1" },
+            ],
+            gesPublic: [
+                { text: "≤ 5", letter: "A", color: "#f2eff4" },
+                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
+                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
+                { text: "31 à 60", letter: "D", color: "#cc93f4" },
+                { text: "61 à 100", letter: "E", color: "#bb72f3" },
+                { text: "101 à 145", letter: "F", color: "#a94cee" },
+                { text: "> 145", letter: "G", color: "#8b1ae1" },
+            ],
+            gesBureaux: [
+                { text: "≤ 5", letter: "A", color: "#f2eff4" },
+                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
+                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
+                { text: "31 à 60", letter: "D", color: "#cc93f4" },
+                { text: "61 à 100", letter: "E", color: "#bb72f3" },
+                { text: "101 à 145", letter: "F", color: "#a94cee" },
+                { text: "> 145", letter: "G", color: "#8b1ae1" },
+            ],
+            gesOccContinue: [
+                { text: "≤ 5", letter: "A", color: "#f2eff4" },
+                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
+                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
+                { text: "31 à 60", letter: "D", color: "#cc93f4" },
+                { text: "61 à 100", letter: "E", color: "#bb72f3" },
+                { text: "101 à 145", letter: "F", color: "#a94cee" },
+                { text: "> 145", letter: "G", color: "#8b1ae1" },
+            ],
+            assocDPE: [
+                { type: 'logement', ref: 'dpe' },
+                { type: 'tertiaire', ref: 'dpeTertiaire' },
+                { type: 'public', ref: 'dpePublic' },
+                { type: 'bureaux', ref: 'dpeBureaux' },
+                { type: 'OccContinue', ref: 'dpeOccContinue' },
+            ],
+            assocGES: [
+                { type: 'logement', ref: 'ges' },
+                { type: 'tertiaire', ref: 'gesTertiaire' },
+                { type: 'public', ref: 'gesPublic' },
+                { type: 'bureaux', ref: 'gesBureaux' },
+                { type: 'OccContinue', ref: 'gesOccContinue' },
+            ],
             widthDaron: 0,
-            exportMode: null
+            exportMode: null,
+            refreshDPE: 0
         }
     },
     created() {
@@ -80,18 +169,19 @@ export default {
     destroyed() {
     },
     mounted() {
-        let dpefind = this.dpe.find(item => item.minrange <= this.valueDPE && item.maxrange >= this.valueDPE);
-        dpefind == undefined ? dpefind = this.dpe[this.dpe.length - 1] : '';
-        console.log(dpefind)
+        let dpefind = this.typeDPE ? this.assocDPE.find(ass => ass.type == this.typeDPE) : this.dpe;
+        this.typeDPE ? this.dpe = this[dpefind.ref] : this.dpe;
+        dpefind = this.typeDPE ? this.assocDPE.find(ass => ass.type == this.typeDPE) : this.dpe;
+        this.typeDPE ? this.dpe = this[dpefind.ref] : this.dpe;
+        let dperange = this.dpe.find(item => item.minrange <= this.valueDPE && item.maxrange >= this.valueDPE);
+        dperange == undefined ? dperange = this.dpe[this.dpe.length - 1] : '';
         this.widthDaron = document.getElementById('dpe_div').offsetWidth;
-        let heightDaron = document.getElementById('etiquette_ener').offsetHeight;
-        // let step = (dpefind.max / (dpefind.maxrange - dpefind.minrange));
-        let DynamicHeight = dpefind.min;
-        console.log(DynamicHeight)
+        let DynamicHeight = dperange.min;
         var r = document.querySelector(':root');
         r.style.setProperty('--height', (DynamicHeight) + "px");
+        this.refreshDPE++;
     },
-    computed:{
+    computed: {
     },
     methods: {
         exporttopng() {
