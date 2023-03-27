@@ -1,5 +1,6 @@
 // Importation de notre composant Vue
-import component from './dpe.vue';
+import dpe from './dpe.vue';
+import ges from './ges.vue';
 
 // Déclaration de la méthode d'installation utilisée via Vue.use(...)
 export function install(Vue) {
@@ -7,7 +8,8 @@ export function install(Vue) {
   
 	install.installed = true;
   
-	Vue.component('dpe', component);
+	Vue.component('dpe', dpe);
+	Vue.component('ges', ges);
 }
 
 // Création du module à destionation Vue.use(...)
