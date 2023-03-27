@@ -4,17 +4,18 @@
 ## How to use :
 
 ### 1. Install package
-```
+
+```js
 npm install nuxt-component-dpe
 ```
 
 ### 2. Import package
 
-```
+```js
 import dpe from 'nuxt-component-dpe';
 ```
 
-```
+```js
 export default {
   components: {dpe}
 }
@@ -23,12 +24,12 @@ export default {
 ### 3. Init component in Nuxt with values
 
 - With Export Mode (PNG):
-```
+```js
 <dpe valueDPE="0" :style="'width:25%;'" exportMode="active"/>
 ```
 
 - Without Export Mode (PNG):
-```
+```js
 <dpe valueDPE="0" :style="'width:25%;'"/>
 ```
 
