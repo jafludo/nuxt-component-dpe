@@ -6,7 +6,20 @@
 ```
 npm install nuxt-component-dpe
 ```
-### 2. Init component in Nuxt with values
+
+### 2. Import package
+
+```
+import dpe from 'nuxt-component-dpe';
+```
+
+```
+export default {
+  components: {dpe}
+}
+```
+
+### 3. Init component in Nuxt with values
 
 - With Export Mode (PNG):
 ```
@@ -18,14 +31,14 @@ npm install nuxt-component-dpe
 <dpe valueDPE="0" :style="'width:25%;'"/>
 ```
 
-### 3. Result
+### 4. Result
 
 With Export Mode (PNG)           |  Without Export Mode (PNG)
 :-------------------------:|:-------------------------:
 ![](assets/dpe_with_export.PNG)  |  ![](assets/dpe_without_export.PNG)
 
 
-### 4. Compatibility 
+### 5. Compatibility 
 
 ![](assets/Nuxtjs_logo.png)
 
