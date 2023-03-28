@@ -126,7 +126,7 @@ export default {
         gesfind ? this.typeBatiment = gesfind.typeBatiment : '';
         let gesrange = this.ges.find(item => item.minrange <= this.value && item.maxrange >= this.value);
         gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
-        this.widthDaron = document.getElementById('ges_div').offsetWidth;
+        this.widthDaron = document.getElementById('ges_div').offsetWidth - 24;
         let DynamicHeight = gesrange.min;
         var r = document.querySelector(':root');
         r.style.setProperty('--height', (DynamicHeight) + "px");

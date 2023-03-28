@@ -127,7 +127,7 @@ export default {
         dpefind ? this.typeBatiment = dpefind.typeBatiment : '';
         let dperange = this.dpe.find(item => item.minrange <= this.value && item.maxrange >= this.value);
         dperange == undefined ? dperange = this.dpe[this.dpe.length - 1] : '';
-        this.widthDaron = document.getElementById('dpe_div').offsetWidth;
+        this.widthDaron = document.getElementById('dpe_div').offsetWidth - 24;
         let DynamicHeight = dperange.min;
         var r = document.querySelector(':root');
         r.style.setProperty('--height', (DynamicHeight) + "px");
