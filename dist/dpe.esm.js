@@ -508,31 +508,30 @@ __vue_render__$1._withStripped = true;
 
 // Déclaration de la méthode d'installation utilisée via Vue.use(...)
 function install(Vue) {
-	if (install.installed) { return; }
-  
-	install.installed = true;
-  
-	Vue.component('dpe', __vue_component__);
-	Vue.component('ges', __vue_component__$1);
+  if (install.installed) { return; }
+
+  install.installed = true;
+
+  Vue.component("dpe", __vue_component__);
+  Vue.component("ges", __vue_component__$1);
 }
 
 // Création du module à destionation Vue.use(...)
 var plugin = {
-	install: install,
+  install: install,
 };
 
 // Installation automatique si Vue est détecté (par exemple dans un navigation via la balise <script>)
 var GlobalVue = null;
 
-if (typeof window !== 'undefined') {
-	GlobalVue = window.Vue;
-} else if (typeof global !== 'undefined') {
-	GlobalVue = global.Vue;
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+} else if (typeof global !== "undefined") {
+  GlobalVue = global.Vue;
 }
 
 if (GlobalVue) {
-	GlobalVue.use(plugin);
+  GlobalVue.use(plugin);
 }
 
-export default component;
-export { install };
+export { __vue_component__ as dpe, __vue_component__$1 as ges, install };

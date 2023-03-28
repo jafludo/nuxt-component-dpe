@@ -1,34 +1,34 @@
 // Importation de notre composant Vue
-import dpe from './dpe.vue';
-import ges from './ges.vue';
+import dpe from "./dpe.vue";
+import ges from "./ges.vue";
 
 // Déclaration de la méthode d'installation utilisée via Vue.use(...)
 export function install(Vue) {
-	if (install.installed) return;
-  
-	install.installed = true;
-  
-	Vue.component('dpe', dpe);
-	Vue.component('ges', ges);
+  if (install.installed) return;
+
+  install.installed = true;
+
+  Vue.component("dpe", dpe);
+  Vue.component("ges", ges);
 }
 
 // Création du module à destionation Vue.use(...)
 const plugin = {
-	install,
+  install,
 };
 
 // Installation automatique si Vue est détecté (par exemple dans un navigation via la balise <script>)
 let GlobalVue = null;
 
-if (typeof window !== 'undefined') {
-	GlobalVue = window.Vue;
-} else if (typeof global !== 'undefined') {
-	GlobalVue = global.Vue;
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+} else if (typeof global !== "undefined") {
+  GlobalVue = global.Vue;
 }
 
 if (GlobalVue) {
-	GlobalVue.use(plugin);
+  GlobalVue.use(plugin);
 }
 
 // Exporter en tant que module (pour npm/webpack/etc.)
-export default component;
+export { dpe, ges };
