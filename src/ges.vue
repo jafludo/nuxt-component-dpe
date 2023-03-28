@@ -28,7 +28,7 @@
                 <div class="triangle-leftcode" :style="'border-right: 24px solid black;'"></div>
                 <div class="slider_number">
                     <p style="z-index: 8;">{{ value }}</p>
-                    <div class="aim_line" :style="'width: ' + this.widthDaron + 'px'"></div>
+                    <div class="aim_line" :style="'width: ' + this.widthDaron-16 + 'px'"></div>
                 </div>
             </div>
         </div>
