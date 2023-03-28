@@ -2,10 +2,10 @@
     <div id="dpe_div" class="flex">
         <div class="div_left">
             <div class="legend_top">
-                <p>Logement économe</p>
+                <p>{{ title_haut }}</p>
             </div>
             <div id='etiquette_ener' class="etiquette">
-                <div v-for="(e, index) in dpe" :key="refreshDPE">
+                <div v-for="(e, index) in dpe">
                     <div class="grp-et">
                         <div class="etiquette_base" :style="'background : ' + e.color + ' ; width: ' + e.width">
                             <p :style="'color : ' + e.colortext + ' ; padding-left: 8px'">{{ e.text }}</p>
@@ -17,12 +17,12 @@
                 </div>
             </div>
             <div class="legend_bottom">
-                <p>Logement énergivore</p>
+                <p>{{ title_bas }}</p>
             </div>
         </div>
         <div class="div_right">
             <div class="legend_top_r">
-                Logement
+                {{ typeBatiment }}
             </div>
             <div class="space_beetween"></div>
             <div class="grp-et">
@@ -100,68 +100,17 @@ export default {
                 { text: "831 à 1130", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 831, maxrange: 1130, min: 180 },
                 { text: "> 1130", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 1130, maxrange: 9999, min: 214 },
             ],
-            ges: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4" },
-                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
-                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
-                { text: "31 à 60", letter: "D", color: "#cc93f4" },
-                { text: "61 à 100", letter: "E", color: "#bb72f3" },
-                { text: "101 à 145", letter: "F", color: "#a94cee" },
-                { text: "> 145", letter: "G", color: "#8b1ae1" },
-            ],
-            gesTertiaire: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4" },
-                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
-                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
-                { text: "31 à 60", letter: "D", color: "#cc93f4" },
-                { text: "61 à 100", letter: "E", color: "#bb72f3" },
-                { text: "101 à 145", letter: "F", color: "#a94cee" },
-                { text: "> 145", letter: "G", color: "#8b1ae1" },
-            ],
-            gesPublic: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4" },
-                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
-                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
-                { text: "31 à 60", letter: "D", color: "#cc93f4" },
-                { text: "61 à 100", letter: "E", color: "#bb72f3" },
-                { text: "101 à 145", letter: "F", color: "#a94cee" },
-                { text: "> 145", letter: "G", color: "#8b1ae1" },
-            ],
-            gesBureaux: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4" },
-                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
-                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
-                { text: "31 à 60", letter: "D", color: "#cc93f4" },
-                { text: "61 à 100", letter: "E", color: "#bb72f3" },
-                { text: "101 à 145", letter: "F", color: "#a94cee" },
-                { text: "> 145", letter: "G", color: "#8b1ae1" },
-            ],
-            gesOccContinue: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4" },
-                { text: "6 à 15", letter: "B", color: "#dfc1f7" },
-                { text: "16 à 30", letter: "C", color: "#d6aaf4" },
-                { text: "31 à 60", letter: "D", color: "#cc93f4" },
-                { text: "61 à 100", letter: "E", color: "#bb72f3" },
-                { text: "101 à 145", letter: "F", color: "#a94cee" },
-                { text: "> 145", letter: "G", color: "#8b1ae1" },
-            ],
             assocDPE: [
-                { type: 'logement', ref: 'dpe' },
-                { type: 'tertiaire', ref: 'dpeTertiaire' },
-                { type: 'public', ref: 'dpePublic' },
-                { type: 'bureaux', ref: 'dpeBureaux' },
-                { type: 'OccContinue', ref: 'dpeOccContinue' },
-            ],
-            assocGES: [
-                { type: 'logement', ref: 'ges' },
-                { type: 'tertiaire', ref: 'gesTertiaire' },
-                { type: 'public', ref: 'gesPublic' },
-                { type: 'bureaux', ref: 'gesBureaux' },
-                { type: 'OccContinue', ref: 'gesOccContinue' },
+                { type: 'logement', ref: 'dpe', title_haut: 'Logement économe', title_bas: 'Logement énergivore', typeBatiment: 'Logement'},
+                { type: 'tertiaire', ref: 'dpeTertiaire', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment'},
+                { type: 'public', ref: 'dpePublic', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment'},
+                { type: 'bureaux', ref: 'dpeBureaux', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment'},
+                { type: 'OccContinue', ref: 'dpeOccContinue', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment'},
             ],
             widthDaron: 0,
-            exportMode: null,
-            refreshDPE: 0
+            title_haut: '',
+            title_bas: '',
+            typeBatiment: ''
         }
     },
     created() {
@@ -173,13 +122,15 @@ export default {
         this.typeDPE ? this.dpe = this[dpefind.ref] : this.dpe;
         dpefind = this.typeDPE ? this.assocDPE.find(ass => ass.type == this.typeDPE) : this.dpe;
         this.typeDPE ? this.dpe = this[dpefind.ref] : this.dpe;
+        dpefind ? this.title_haut = dpefind.title_haut : '';
+        dpefind ? this.title_bas = dpefind.title_bas : '';
+        dpefind ? this.typeBatiment = dpefind.typeBatiment : '';
         let dperange = this.dpe.find(item => item.minrange <= this.valueDPE && item.maxrange >= this.valueDPE);
         dperange == undefined ? dperange = this.dpe[this.dpe.length - 1] : '';
         this.widthDaron = document.getElementById('dpe_div').offsetWidth;
         let DynamicHeight = dperange.min;
         var r = document.querySelector(':root');
         r.style.setProperty('--height', (DynamicHeight) + "px");
-        this.refreshDPE++;
     },
     computed: {
     },
