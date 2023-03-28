@@ -27,7 +27,7 @@
             <div class="grp-et">
                 <div class="triangle-leftcode" :style="'border-right: 24px solid black;'"></div>
                 <div class="slider_number">
-                    <p style="z-index: 8;">{{ valueGES }}</p>
+                    <p style="z-index: 8;">{{ value }}</p>
                     <div class="aim_line" :style="'width: ' + this.widthDaron + 'px'"></div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
 import * as htmlToImage from 'html-to-image';
 export default {
     name: 'ges',
-    props: ['valueGES', 'exportMode', 'typeGES'],
+    props: ['value', 'exportMode', 'type'],
     data() {
         return {
             ges: [
@@ -117,14 +117,14 @@ export default {
     destroyed() {
     },
     mounted() {
-        let gesfind = this.typeGES ? this.assocGES.find(ass => ass.type == this.typeGES) : this.ges;
-        this.typeGES ? this.ges = this[gesfind.ref] : this.ges;
-        gesfind = this.typeGES ? this.assocGES.find(ass => ass.type == this.typeGES) : this.fes;
-        this.typeGES ? this.ges = this[gesfind.ref] : this.ges;
+        let gesfind = this.type ? this.assocGES.find(ass => ass.type == this.type) : this.ges;
+        this.type ? this.ges = this[gesfind.ref] : this.ges;
+        gesfind = this.type ? this.assocGES.find(ass => ass.type == this.type) : this.fes;
+        this.type ? this.ges = this[gesfind.ref] : this.ges;
         gesfind ? this.title_haut = gesfind.title_haut : '';
         gesfind ? this.title_bas = gesfind.title_bas : '';
         gesfind ? this.typeBatiment = gesfind.typeBatiment : '';
-        let gesrange = this.ges.find(item => item.minrange <= this.valueGES && item.maxrange >= this.valueGES);
+        let gesrange = this.ges.find(item => item.minrange <= this.value && item.maxrange >= this.value);
         gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
         this.widthDaron = document.getElementById('ges_div').offsetWidth;
         let DynamicHeight = gesrange.min;

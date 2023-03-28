@@ -28,7 +28,7 @@
             <div class="grp-et">
                 <div class="triangle-leftcode" :style="'border-right: 24px solid black;'"></div>
                 <div class="slider_number">
-                    <p style="z-index: 8;">{{ valueDPE }}</p>
+                    <p style="z-index: 8;">{{ value }}</p>
                     <div class="aim_line" :style="'width: ' + this.widthDaron + 'px'"></div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
 import * as htmlToImage from 'html-to-image';
 export default {
     name: 'dpe',
-    props: ['valueDPE', 'exportMode', 'typeDPE'],
+    props: ['value', 'exportMode', 'type'],
     data() {
         return {
             dpe: [
@@ -118,14 +118,14 @@ export default {
     destroyed() {
     },
     mounted() {
-        let dpefind = this.typeDPE ? this.assocDPE.find(ass => ass.type == this.typeDPE) : this.dpe;
-        this.typeDPE ? this.dpe = this[dpefind.ref] : this.dpe;
-        dpefind = this.typeDPE ? this.assocDPE.find(ass => ass.type == this.typeDPE) : this.dpe;
-        this.typeDPE ? this.dpe = this[dpefind.ref] : this.dpe;
+        let dpefind = this.type ? this.assocDPE.find(ass => ass.type == this.type) : this.dpe;
+        this.type ? this.dpe = this[dpefind.ref] : this.dpe;
+        dpefind = this.type ? this.assocDPE.find(ass => ass.type == this.type) : this.dpe;
+        this.type ? this.dpe = this[dpefind.ref] : this.dpe;
         dpefind ? this.title_haut = dpefind.title_haut : '';
         dpefind ? this.title_bas = dpefind.title_bas : '';
         dpefind ? this.typeBatiment = dpefind.typeBatiment : '';
-        let dperange = this.dpe.find(item => item.minrange <= this.valueDPE && item.maxrange >= this.valueDPE);
+        let dperange = this.dpe.find(item => item.minrange <= this.value && item.maxrange >= this.value);
         dperange == undefined ? dperange = this.dpe[this.dpe.length - 1] : '';
         this.widthDaron = document.getElementById('dpe_div').offsetWidth;
         let DynamicHeight = dperange.min;
