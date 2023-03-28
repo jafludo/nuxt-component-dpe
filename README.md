@@ -42,9 +42,9 @@ export default {
 
 With Export Mode (PNG)           |  Without Export Mode (PNG)
 :-------------------------:|:-------------------------:
-![](assets/dpe_with_export.PNG)  |  ![](assets/dpe_without_export.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/dpe_with_export.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/dpe_without_export.PNG)
 With Custom CSS         |  Without Custom CSS
-![](assets/custom_dpe_background_tertiaire.PNG)  |  ![](assets/nocustom_dpe_background_logement.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_dpe_background_tertiaire.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/nocustom_dpe_background_logement.PNG)
 
 ### 4. Parameters type :
 
@@ -64,16 +64,16 @@ Valeurs possibles :
 DPE          |  GES
 :-------------------------:|:-------------------------:
 logement|logement
-![](assets/custom_dpe_background_logement.PNG)  |  ![](assets/custom_ges_background_logement.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_dpe_background_logement.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_ges_background_logement.PNG)
 tertiaire|tertiaire
-![](assets/custom_dpe_background_tertiaire.PNG)  |  ![](assets/custom_ges_background_tertiaire.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_dpe_background_tertiaire.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_ges_background_tertiaire.PNG)
 public|public
-![](assets/custom_dpe_background_public.PNG)  |  ![](assets/custom_ges_background_public.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_dpe_background_public.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_ges_background_public.PNG)
 bureaux|bureaux
-![](assets/custom_dpe_background_bureaux.PNG)  |  ![](assets/custom_ges_background_bureaux.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_dpe_background_bureaux.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_ges_background_bureaux.PNG)
 OccContinue|OccContinue
-![](assets/custom_dpe_background_occcontinue.PNG)  |  ![](assets/custom_ges_background_occcontinue.PNG)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_dpe_background_occcontinue.PNG)  |  ![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/custom_ges_background_occcontinue.PNG)
 
 ### 5. Compatibility 
 
-![](assets/Nuxtjs_logo.png)
+![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/Nuxtjs_logo.png)
