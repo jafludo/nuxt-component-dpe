@@ -1,12 +1,12 @@
 {
   "name": "nuxt-component-dpe",
-  "version": "1.1.7",
+  "version": "1.1.10",
   "description": "Use custom components DPE on Nuxt",
-  "main": "dist/dpe.umd.js",
-  "module": "dist/dpe.esm.js",
-  "unpkg": "dist/dpe.min.js",
+  "main": "./dist/dpe.umd.js",
+  "module": "./dist/dpe.esm.js",
+  "unpkg": "./dist/dpe.min.js",
   "browser": {
-    "./sfc": "src/dpe.vue"
+    "./sfc": "./src/dpe.vue"
   },
   "keywords": [
     "dpe",
