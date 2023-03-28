@@ -1,5 +1,5 @@
 <template>
-    <div id="dpe_div" class="flex">
+    <div id="dpe_div">
         <div class="div_left">
             <div class="legend_top">
                 <p>{{ title_haut }}</p>
@@ -170,6 +170,7 @@ export default {
     max-height: fit-content;
     height: fit-content;
     width: 100%;
+    display: flex;
 
     .grp-et {
         display: flex;
