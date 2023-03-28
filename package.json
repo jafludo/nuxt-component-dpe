@@ -44,6 +44,13 @@
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
+  "files": [
+    "build",
+    "dist",
+    "src",
+    "LICENCE",
+    "README.md"
+  ],
   "publishConfig": {
     "jafludo:registry": "https://registry.npmjs.org/"
   }
