@@ -44,7 +44,7 @@ With Export Mode (PNG)           |  Without Export Mode (PNG)
 :-------------------------:|:-------------------------:
 ![](assets/dpe_with_export.PNG)  |  ![](assets/dpe_without_export.PNG)
 With Custom CSS         |  Without Custom CSS
-![](assets/custom_dpe_background_tertiaire.PNG)  |  ![](assets/custom_ges_background_tertiaire.PNG)
+![](assets/custom_dpe_background_tertiaire.PNG)  |  ![](assets/nocustom_dpe_background_logement.PNG)
 
 ### 4. Parameters type :
 
