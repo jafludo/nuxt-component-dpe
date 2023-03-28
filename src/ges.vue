@@ -116,8 +116,8 @@ export default {
     },
     mounted() {
         let gesfind = this.typeGES ? this.assocGES.find(ass => ass.type == this.typeGES) : this.ges;
-        this.typeDPE ? this.dpe = this[dpefind.ref] : this.ges;
-        dpefind = this.typeGES ? this.assocGES.find(ass => ass.type == this.typeGES) : this.fes;
+        this.typeDPE ? this.dpe = this[gesfind.ref] : this.ges;
+        gesfind = this.typeGES ? this.assocGES.find(ass => ass.type == this.typeGES) : this.fes;
         this.typeGES ? this.ges = this[gesfind.ref] : this.ges;
         let gesrange = this.ges.find(item => item.minrange <= this.valueGES && item.maxrange >= this.valueGES);
         gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
