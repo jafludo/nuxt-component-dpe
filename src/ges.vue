@@ -171,6 +171,10 @@ export default {
     width: 100%;
     display: flex;
 
+    * {
+        margin: 0;
+    }
+
     .grp-et {
         display: flex;
     }
