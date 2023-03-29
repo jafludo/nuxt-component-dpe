@@ -222,7 +222,6 @@ export default {
     }
 
     .aim_line {
-        height: 1px;
         border-style: dotted;
         border-color: black;
         border-width: 1px;
