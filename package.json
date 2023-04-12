@@ -15,7 +15,9 @@
     "rollup",
     "module",
     "component",
-    "vue"
+    "vue",
+    "front-end",
+    "iot"
   ],
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
