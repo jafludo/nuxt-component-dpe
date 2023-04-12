@@ -160,7 +160,6 @@ export default {
     --heightGES: 0px;
 }
 
-
 #ges_div {
     position: relative;
     max-height: fit-content;
