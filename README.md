@@ -76,5 +76,5 @@ OccContinue|OccContinue
 
 ### 5. Compatibility 
 
-- Nuxt 2.X ✅
-- Nuxt 3.X ❌
+- Nuxt 2.X.X ✅
+- Nuxt 3.X.X ❌
