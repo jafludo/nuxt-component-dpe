@@ -76,4 +76,5 @@ OccContinue|OccContinue
 
 ### 5. Compatibility 
 
-![](https://github.com/jafludo/nuxt-component-dpe/blob/main/assets/Nuxtjs_logo.png)
+- Nuxt 2.X ✅
+- Nuxt 3.X ❌
