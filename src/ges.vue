@@ -53,51 +53,51 @@ export default {
     data() {
         return {
             ges: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 5, min: 0, index: 0 },
-                { text: "6 à 10", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 6, maxrange: 10, min: 36, index: 1 },
-                { text: "11 à 20", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 11, maxrange: 20, min: 72, index: 2 },
-                { text: "21 à 35", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 21, maxrange: 35, min: 108, index: 3 },
-                { text: "36 à 55", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 36, maxrange: 55, min: 144, index: 4 },
-                { text: "56 à 80", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 56, maxrange: 80, min: 180, index: 5 },
-                { text: "> 80", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 80, maxrange: 9999, min: 216, index: 6 },
+                { text: "≤ 5", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 5.99, min: 0, index: 0 },
+                { text: "6 à 10", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 6, maxrange: 10.99, min: 36, index: 1 },
+                { text: "11 à 20", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 11, maxrange: 20.99, min: 72, index: 2 },
+                { text: "21 à 35", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 21, maxrange: 35.99, min: 108, index: 3 },
+                { text: "36 à 55", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 36, maxrange: 55.99, min: 144, index: 4 },
+                { text: "56 à 80", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 56, maxrange: 80.99, min: 180, index: 5 },
+                { text: "> 80", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 80, maxrange: 99999999.99, min: 216, index: 6 },
             ],
             gesTertiaire: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4", width: '45%', colortext: 'black', minrange: 0, maxrange: 5, min: 0, index: 0 },
-                { text: "6 à 10", letter: "B", color: "#dfc1f7", width: '50%', colortext: 'black', minrange: 6, maxrange: 10, min: 36, index: 1 },
-                { text: "11 à 20", letter: "C", color: "#d6aaf4", width: '55%', colortext: 'black', minrange: 11, maxrange: 20, min: 72, index: 2 },
-                { text: "21 à 35", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 21, maxrange: 35, min: 108, index: 3 },
-                { text: "36 à 55", letter: "E", color: "#bb72f3", width: '65%', colortext: 'black', minrange: 36, maxrange: 55, min: 144, index: 4 },
-                { text: "56 à 80", letter: "F", color: "#a94cee", width: '70%', colortext: 'black', minrange: 56, maxrange: 80, min: 180, index: 5 },
-                { text: "81 à 110", letter: "G", color: "#8b1ae1", width: '75%', colortext: 'white', minrange: 81, maxrange: 110, min: 216, index: 6 },
-                { text: "111 à 145", letter: "H", color: "#4d4d4d", width: '80%', colortext: 'white', minrange: 111, maxrange: 145, min: 252, index: 7 },
-                { text: "> 145", letter: "I", color: "#000000", width: '85%', colortext: 'white', minrange: 145, maxrange: 9999, min: 288, index: 8 },
+                { text: "≤ 5", letter: "A", color: "#f2eff4", width: '45%', colortext: 'black', minrange: 0, maxrange: 5.99, min: 0, index: 0 },
+                { text: "6 à 10", letter: "B", color: "#dfc1f7", width: '50%', colortext: 'black', minrange: 6, maxrange: 10.99, min: 36, index: 1 },
+                { text: "11 à 20", letter: "C", color: "#d6aaf4", width: '55%', colortext: 'black', minrange: 11, maxrange: 20.99, min: 72, index: 2 },
+                { text: "21 à 35", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 21, maxrange: 35.99, min: 108, index: 3 },
+                { text: "36 à 55", letter: "E", color: "#bb72f3", width: '65%', colortext: 'black', minrange: 36, maxrange: 55.99, min: 144, index: 4 },
+                { text: "56 à 80", letter: "F", color: "#a94cee", width: '70%', colortext: 'black', minrange: 56, maxrange: 80.99, min: 180, index: 5 },
+                { text: "81 à 110", letter: "G", color: "#8b1ae1", width: '75%', colortext: 'white', minrange: 81, maxrange: 110.99, min: 216, index: 6 },
+                { text: "111 à 145", letter: "H", color: "#4d4d4d", width: '80%', colortext: 'white', minrange: 111, maxrange: 145.99, min: 252, index: 7 },
+                { text: "> 145", letter: "I", color: "#000000", width: '85%', colortext: 'white', minrange: 145, maxrange: 99999999.99, min: 288, index: 8 },
             ],
             gesPublic: [
-                { text: "≤ 3", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 3, min: 0, index: 0 },
-                { text: "4 à 10", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 4, maxrange: 10, min: 36, index: 1 },
-                { text: "11 à 25", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 11, maxrange: 25, min: 72, index: 2 },
-                { text: "26 à 45", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 26, maxrange: 45, min: 108, index: 3 },
-                { text: "46 à 70", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 46, maxrange: 70, min: 144, index: 4 },
-                { text: "71 à 95", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 71, maxrange: 95, min: 180, index: 5 },
-                { text: "> 95", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 95, maxrange: 9999, min: 216, index: 6 },
+                { text: "≤ 3", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 3.99, min: 0, index: 0 },
+                { text: "4 à 10", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 4, maxrange: 10.99, min: 36, index: 1 },
+                { text: "11 à 25", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 11, maxrange: 25.99, min: 72, index: 2 },
+                { text: "26 à 45", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 26, maxrange: 45.99, min: 108, index: 3 },
+                { text: "46 à 70", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 46, maxrange: 70.99, min: 144, index: 4 },
+                { text: "71 à 95", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 71, maxrange: 95.99, min: 180, index: 5 },
+                { text: "> 95", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 95, maxrange: 99999999.99, min: 216, index: 6 },
             ],
             gesBureaux: [
-                { text: "≤ 5", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 5, min: 0, index: 0 },
-                { text: "6 à 15", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 6, maxrange: 15, min: 36, index: 1 },
-                { text: "16 à 30", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 16, maxrange: 30, min: 72, index: 2 },
-                { text: "31 à 60", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 31, maxrange: 60, min: 108, index: 3 },
-                { text: "61 à 100", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 61, maxrange: 100, min: 144, index: 4 },
-                { text: "101 à 145", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 101, maxrange: 145, min: 180, index: 5 },
-                { text: "> 145", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 145, maxrange: 9999, min: 216, index: 6 },
+                { text: "≤ 5", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 5.99, min: 0, index: 0 },
+                { text: "6 à 15", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 6, maxrange: 15.99, min: 36, index: 1 },
+                { text: "16 à 30", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 16, maxrange: 30.99, min: 72, index: 2 },
+                { text: "31 à 60", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 31, maxrange: 60.99, min: 108, index: 3 },
+                { text: "61 à 100", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 61, maxrange: 100.99, min: 144, index: 4 },
+                { text: "101 à 145", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 101, maxrange: 145.99, min: 180, index: 5 },
+                { text: "> 145", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 145, maxrange: 99999999.99, min: 216, index: 6 },
             ],
             gesOccContinue: [
-                { text: "≤ 12", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 12, min: 0, index: 0 },
-                { text: "13 à 30", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 13, maxrange: 30, min: 36, index: 1 },
-                { text: "31 à 65", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 31, maxrange: 65, min: 72, index: 2 },
-                { text: "66 à 110", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 66, maxrange: 110, min: 108, index: 3 },
-                { text: "111 à 160", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 111, maxrange: 160, min: 144, index: 4 },
-                { text: "161 à 220", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 161, maxrange: 220, min: 180, index: 5 },
-                { text: "> 220", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 220, maxrange: 9999, min: 216, index: 6 },
+                { text: "≤ 12", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 12.99, min: 0, index: 0 },
+                { text: "13 à 30", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 13, maxrange: 30.99, min: 36, index: 1 },
+                { text: "31 à 65", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 31, maxrange: 65.99, min: 72, index: 2 },
+                { text: "66 à 110", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 66, maxrange: 110.99, min: 108, index: 3 },
+                { text: "111 à 160", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 111, maxrange: 160.99, min: 144, index: 4 },
+                { text: "161 à 220", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 161, maxrange: 220.99, min: 180, index: 5 },
+                { text: "> 221", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 221, maxrange: 99999999.99, min: 216, index: 6 },
             ],
             assocGES: [
                 { type: 'logement', ref: 'ges', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Logement' },
@@ -164,8 +164,6 @@ export default {
     --heightCellGES: 2rem;
     --heightTriangleGES: 1rem;
 }
-
-
 
 #ges_div {
     position: relative;
@@ -235,8 +233,8 @@ export default {
     }
 
     .triangle-leftcode {
-        border-top: var(--heightTriangle) solid transparent;
-        border-bottom: var(--heightTriangle) solid transparent;
+        border-top: var(--heightTriangleGES) solid transparent;
+        border-bottom: var(--heightTriangleGES) solid transparent;
     }
 
     .aim_line {
