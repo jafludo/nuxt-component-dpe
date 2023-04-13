@@ -205,10 +205,7 @@ export default {
     .export_div {
         cursor: pointer;
         right: 0;
-    }
-
-    #etiquette_ener {
-        height: 100%;
+        margin-right: 8px;
     }
 
     .div_right {
