@@ -252,6 +252,7 @@ export default {
     .export_div {
         cursor: pointer;
         right: 0;
+        margin-right: 8px;
     }
 }
 </style>
