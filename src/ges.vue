@@ -279,6 +279,10 @@ export default {
 
     }
 
+    .absolute {
+        position: absolute;
+    }
+
     #dropdown2 {
         position: relative;
     }
