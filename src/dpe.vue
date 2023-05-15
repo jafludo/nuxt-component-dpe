@@ -272,6 +272,11 @@ export default {
     display: flex;
 
 
+    .absolute {
+        position: absolute;
+    }
+
+
     .options_bot_right {
         display: flex;
 
