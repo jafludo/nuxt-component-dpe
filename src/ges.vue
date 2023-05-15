@@ -2,7 +2,7 @@
     <div id="ges_div">
         <div class="div_left">
             <div class="legend_top">
-                <p style="font-size:13px">{{ title_haut }}</p>
+                <p>{{ title_haut }}</p>
             </div>
             <div id='etiquette_ener_ges' class="etiquette">
                 <div v-for="(e, index) in ges">
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="div_right">
-            <div class="legend_top_r">
+            <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
             <div class="absolute">
