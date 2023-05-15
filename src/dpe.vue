@@ -8,7 +8,7 @@
                 <div v-for="(e, index) in dpe">
                     <div class="grp-et">
                         <div class="etiquette_base" :style="'background : ' + e.color + ' ; width: ' + e.width">
-                            <p :style="'color : ' + e.colortext + ' ; padding-left: 8px'">{{ e.text }}</p>
+                            <p :style="'color : ' + e.colortext + ' ; padding-left: 8px;font-size: 13px;'">{{ e.text }}</p>
                             <p :style="'color : ' + e.colortext + ' ; padding-right: 8px'">{{ e.letter }}</p>
                         </div>
                         <div class="triangle-code" :style="'border-left: 18px solid ' + e.color + ';'"></div>
