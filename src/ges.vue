@@ -4,7 +4,7 @@
             <div class="legend_top">
                 <p>{{ title_haut }}</p>
             </div>
-            <div id='etiquette_ener' class="etiquette">
+            <div id='etiquette_ener_ges' class="etiquette">
                 <div v-for="(e, index) in ges">
                     <div class="grp-et">
                         <div class="etiquette_base" :style="'background : ' + e.color + ' ; width: ' + e.width">
@@ -55,7 +55,7 @@
                 {{ typeBatiment }}
             </div>
             <div class="absolute">
-                <div class="space_beetween"></div>
+                <div class="space_beetweenges"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
                     <div class="slider_number">
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div v-if="objectifs" class="absolute">
-                <div class="space_beetweenobj"></div>
+                <div class="space_beetweengesobj"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
                     <div class="slider_number">
@@ -166,7 +166,7 @@ export default {
         //Value
         let gesfind = this.type ? this.assocGES.find(ass => ass.type == this.type) : this.ges;
         this.type ? this.ges = this[gesfind.ref] : this.ges;
-        this.heightCell = (document.getElementById('ges_div').offsetHeight / this[gesfind.ref].length);
+        this.heightCell = (document.getElementById('ges_div').offsetHeight / this[gesfind.ref].length) - 12;
         gesfind ? this.title_haut = gesfind.title_haut : '';
         gesfind ? this.title_bas = gesfind.title_bas : '';
         gesfind ? this.typeBatiment = gesfind.typeBatiment : '';
@@ -177,7 +177,7 @@ export default {
         var r = document.querySelector(':root');
         r.style.setProperty('--heightGES', DynamicHeight + 24 + 'px');
         r.style.setProperty('--heightCellGES', this.heightCell + 'px');
-        r.style.setProperty('--heightTriangle', this.heightCell / 2 + 'px');
+        r.style.setProperty('--heightTriangleGES', this.heightCell / 2 + 'px');
 
         //Objectif
         if (this.objectifs) {
@@ -266,6 +266,7 @@ export default {
 
 #ges_div {
     position: relative;
+    min-height: fit-content;
     height: fit-content;
     width: 100%;
     display: flex;
@@ -277,10 +278,6 @@ export default {
             cursor: pointer;
         }
 
-    }
-
-    .absolute {
-        position: absolute;
     }
 
     #dropdown2 {
@@ -310,11 +307,11 @@ export default {
         padding-left: 8px;
     }
 
-    .space_beetween {
+    .space_beetweenges {
         height: var(--heightGES);
     }
 
-    .space_beetweenobj {
+    .space_beetweengesobj {
         height: var(--heightGESobj);
     }
 
