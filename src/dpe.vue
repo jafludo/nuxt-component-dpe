@@ -4,7 +4,7 @@
             <div class="legend_top">
                 <p>{{ title_haut }}</p>
             </div>
-            <div id='etiquette_ener' class="etiquette">
+            <div id='etiquette_ener_dpe' class="etiquette">
                 <div v-for="(e, index) in dpe">
                     <div class="grp-et">
                         <div class="etiquette_base" :style="'background : ' + e.color + ' ; width: ' + e.width">
@@ -168,7 +168,7 @@ export default {
         //Value
         let dpefind = this.type ? this.assocDPE.find(ass => ass.type == this.type) : this.dpe;
         this.type ? this.dpe = this[dpefind.ref] : this.dpe;
-        this.heightCell = (document.getElementById('dpe_div').offsetHeight / this[dpefind.ref].length);
+        this.heightCell = (document.getElementById('dpe_div').offsetHeight / this[dpefind.ref].length) - 12;
         dpefind ? this.title_haut = dpefind.title_haut : '';
         dpefind ? this.title_bas = dpefind.title_bas : '';
         dpefind ? this.typeBatiment = dpefind.typeBatiment : '';
@@ -270,11 +270,6 @@ export default {
     height: fit-content;
     width: 100%;
     display: flex;
-
-
-    .absolute {
-        position: absolute;
-    }
 
 
     .options_bot_right {
