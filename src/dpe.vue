@@ -2,8 +2,7 @@
     <div id="dpe_div">
         <div class="div_left">
             <div class="legend_top">
-                <!-- Size right -->
-                <p style="font-size:13px">{{ title_haut }}</p>
+                <p>{{ title_haut }}</p>
             </div>
             <div id='etiquette_ener_dpe' class="etiquette">
                 <div v-for="(e, index) in dpe">
@@ -19,7 +18,7 @@
             </div>
         </div>
         <div class="div_right">
-            <div class="legend_top_r">
+            <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
             <div class="absolute">
