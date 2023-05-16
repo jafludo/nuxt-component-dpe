@@ -70,7 +70,7 @@
                         </select>
                     </div>
                 </div>
-                <div class='export_div' v-if="exportMode == 'active'" @click="exporttopng">
+                <div class='export_div' title="Exporter" v-if="exportMode == 'active'" @click="exporttopng">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <g fill="none" fill-rule="evenodd">
                             <path
