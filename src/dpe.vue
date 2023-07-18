@@ -21,7 +21,7 @@
             <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
-            <div class="absolute">
+            <div style="position: fixed;">
                 <div class="space_beetween"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -34,7 +34,7 @@
                     <p>{{ displayunite }}</p>
                 </div>
             </div>
-            <div v-if="objectifs" class="absolute">
+            <div v-if="objectifs" class="">
                 <div class="space_beetweenobj"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -320,8 +320,8 @@ export default {
     }
 
     .custom_unite {
-        font-size: 9px;
-        font-family: -webkit-body;
+        font-size: 8px;
+        font-weight: bold;
     }
 
     .number_slider {
@@ -357,10 +357,6 @@ export default {
         position: absolute;
         justify-content: space-between;
         width: 100%;
-    }
-
-    .absolute {
-        position: absolute;
     }
 
     .export_div {

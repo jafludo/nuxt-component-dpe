@@ -20,7 +20,7 @@
             <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
-            <div class="absolute" style="position: fixed;">
+            <div style="position: fixed;">
                 <div class="space_beetweenges"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -33,7 +33,7 @@
                     <p>{{ displayunite }}</p>
                 </div>
             </div>
-            <div v-if="objectifs" class="absolute">
+            <div v-if="objectifs" class="">
                 <div class="space_beetweengesobj"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -176,7 +176,7 @@ export default {
         let gesrange = this.ges.find(item => item.minrange <= this.value && item.maxrange >= this.value);
         gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
         this.widthDaron = document.getElementById('ges_div').offsetWidth - 24;
-        let DynamicHeight = (gesrange.index * this.heightCell) + 4 * gesrange.index;
+        let DynamicHeight = (gesrange.index * this.heightCell) + 5 * gesrange.index;
         var r = document.querySelector(':root');
         r.style.setProperty('--heightGES', DynamicHeight + 24 + 'px');
         r.style.setProperty('--heightCellGES', this.heightCell + 'px');
@@ -316,7 +316,7 @@ export default {
 
     .custom_unite {
         font-size: 9px;
-        font-family: -webkit-body;
+        font-weight: bold;
     }
 
     .space_beetweengesobj {
@@ -351,11 +351,12 @@ export default {
     }
 
     .legend_bottom {
-        bottom: 0;
         display: flex;
+        bottom: 0;
         position: absolute;
         justify-content: space-between;
         width: 100%;
+        align-items: flex-end;
     }
 
     .export_div {
