@@ -30,6 +30,9 @@
                         <div class="aim_line" :style="'width: ' + this.widthDaron + 'px'"></div>
                     </div>
                 </div>
+                <div v-if="displayunite" class="custom_unite">
+                    <p>{{ displayunite }}</p>
+                </div>
             </div>
             <div v-if="objectifs" class="absolute">
                 <div class="space_beetweenobj"></div>
@@ -90,7 +93,7 @@
 import * as htmlToImage from 'html-to-image';
 export default {
     name: 'dpe',
-    props: ['value', 'exportMode', 'type', 'objectifs'],
+    props: ['value', 'exportMode', 'type', 'objectifs', 'displayunite'],
     data() {
         return {
             dpe: [
@@ -316,6 +319,11 @@ export default {
         height: var(--heightDPEobj);
     }
 
+    .custom_unite {
+        font-size: 9px;
+        font-family: -webkit-body;
+    }
+
     .number_slider {
         margin-right: 4px;
     }
@@ -349,7 +357,10 @@ export default {
         position: absolute;
         justify-content: space-between;
         width: 100%;
-        height: 0;
+    }
+
+    .absolute {
+        position: absolute;
     }
 
     .export_div {

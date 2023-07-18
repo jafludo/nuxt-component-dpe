@@ -20,7 +20,7 @@
             <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
-            <div class="absolute">
+            <div class="absolute" style="position: fixed;">
                 <div class="space_beetweenges"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -28,6 +28,9 @@
                         <p class="number_slider" style="z-index: 9;">{{ value }}</p>
                         <div class="aim_line" :style="'width: ' + this.widthDaron + 'px'"></div>
                     </div>
+                </div>
+                <div v-if="displayunite" class="custom_unite">
+                    <p>{{ displayunite }}</p>
                 </div>
             </div>
             <div v-if="objectifs" class="absolute">
@@ -89,7 +92,7 @@
 import * as htmlToImage from 'html-to-image';
 export default {
     name: 'ges',
-    props: ['value', 'exportMode', 'type', 'objectifs'],
+    props: ['value', 'exportMode', 'type', 'objectifs', 'displayunite'],
     data() {
         return {
             ges: [
@@ -311,6 +314,11 @@ export default {
         height: var(--heightGES);
     }
 
+    .custom_unite {
+        font-size: 9px;
+        font-family: -webkit-body;
+    }
+
     .space_beetweengesobj {
         height: var(--heightGESobj);
     }
@@ -348,7 +356,6 @@ export default {
         position: absolute;
         justify-content: space-between;
         width: 100%;
-        height: 0;
     }
 
     .export_div {
