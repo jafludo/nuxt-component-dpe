@@ -349,6 +349,7 @@ export default {
         position: absolute;
         justify-content: space-between;
         width: 100%;
+        height: 0;
     }
 
     .export_div {
