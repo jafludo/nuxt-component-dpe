@@ -18,10 +18,10 @@
             </div>
         </div>
         <div class="div_right">
-            <div class="legend_top_r" style="font-size: 12px;">
+            <div class="legend_top_r" style="font-size: 13px;">
                 {{ typeBatiment }}
             </div>
-            <div style="width:4rem">
+            <div style="width:5rem">
                 <div class="space_beetween"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -326,9 +326,10 @@ export default {
     }
 
     .custom_unite {
-        font-size: 8px;
+        font-size: 10px;
         font-weight: bold;
         text-align: right;
+        padding-top: 4px;
     }
 
     .number_slider {
