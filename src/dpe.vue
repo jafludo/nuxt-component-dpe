@@ -21,12 +21,12 @@
             <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
-            <div style="position: fixed;">
+            <div style="width:4rem">
                 <div class="space_beetween"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
                     <div class="slider_number">
-                        <p class="number_slider" style="z-index: 9;">{{ value }}</p>
+                        <p class="number_slider" style="z-index: 9;">{{ this.value }}</p>
                         <div class="aim_line" :style="'width: ' + this.widthDaron + 'px'"></div>
                     </div>
                 </div>
@@ -167,37 +167,43 @@ export default {
     destroyed() {
     },
     mounted() {
-
-        //Value
-        let dpefind = this.type ? this.assocDPE.find(ass => ass.type == this.type) : this.dpe;
-        this.type ? this.dpe = this[dpefind.ref] : this.dpe;
-        this.heightCell = (document.getElementById('dpe_div').offsetHeight / this[dpefind.ref].length) - 12;
-        dpefind ? this.title_haut = dpefind.title_haut : '';
-        dpefind ? this.title_bas = dpefind.title_bas : '';
-        dpefind ? this.typeBatiment = dpefind.typeBatiment : '';
-        let dperange = this.dpe.find(item => item.minrange <= this.value && item.maxrange >= this.value);
-        dperange == undefined ? dperange = this.dpe[this.dpe.length - 1] : '';
-        this.widthDaron = document.getElementById('dpe_div').offsetWidth - 24;
-        let DynamicHeight = (dperange.index * this.heightCell) + 4 * dperange.index;
-        var r = document.querySelector(':root');
-        r.style.setProperty('--heightDPE', DynamicHeight + 24 + 'px');
-        r.style.setProperty('--heightCell', this.heightCell + 'px');
-        r.style.setProperty('--heightTriangle', this.heightCell / 2 + 'px');
-
-        //Objectif
-        if (this.objectifs) {
-            let dperangeObj = this.dpe.find(item => item.minrange <= parseFloat(this.objectifs[this.indexActif].value) && item.maxrange >= parseFloat(this.objectifs[this.indexActif].value));
-            dperangeObj == undefined ? dperangeObj = this.dpe[this.dpe.length - 1] : '';
-            let DynamicHeightObj = (dperangeObj.index * this.heightCell) + 4 * dperangeObj.index;
+        if (typeof window !== 'undefined') {
+            //Value
+            let dpefind = this.type ? this.assocDPE.find(ass => ass.type == this.type) : this.dpe;
+            this.type ? this.dpe = this[dpefind.ref] : this.dpe;
+            this.heightCell = (document.getElementById('dpe_div').offsetHeight / this[dpefind.ref].length) - 12;
+            dpefind ? this.title_haut = dpefind.title_haut : '';
+            dpefind ? this.title_bas = dpefind.title_bas : '';
+            dpefind ? this.typeBatiment = dpefind.typeBatiment : '';
+            let dperange = this.dpe.find(item => item.minrange <= this.value && item.maxrange >= this.value);
+            dperange == undefined ? dperange = this.dpe[this.dpe.length - 1] : '';
+            this.widthDaron = document.getElementById('dpe_div').offsetWidth - 24;
+            let DynamicHeight = (dperange.index * this.heightCell) + 4 * dperange.index;
             var r = document.querySelector(':root');
-            r.style.setProperty('--heightDPEobj', DynamicHeightObj + 24 + 'px');
+            r.style.setProperty('--heightDPE', DynamicHeight + 24 + 'px');
+            r.style.setProperty('--heightCell', this.heightCell + 'px');
+            r.style.setProperty('--heightTriangle', this.heightCell / 2 + 'px');
+
+            //Objectif
+            if (this.objectifs) {
+                let dperangeObj = this.dpe.find(item => item.minrange <= parseFloat(this.objectifs[this.indexActif].value) && item.maxrange >= parseFloat(this.objectifs[this.indexActif].value));
+                dperangeObj == undefined ? dperangeObj = this.dpe[this.dpe.length - 1] : '';
+                let DynamicHeightObj = (dperangeObj.index * this.heightCell) + 4 * dperangeObj.index;
+                var r = document.querySelector(':root');
+                r.style.setProperty('--heightDPEobj', DynamicHeightObj + 24 + 'px');
+            }
         }
     },
     methods: {
+        getExportMode: function () {
+            return this.exportMode
+        },
+        setExportMode: function (mode) {
+            this.exportMode = mode;
+        },
         exporttopng() {
             var node = document.querySelector("#dpe_div");
             let acc = this;
-            this.exportMode = ''
             htmlToImage.toPng(node)
                 .then(function (dataUrl) {
                     var link = document.createElement('a');
@@ -206,7 +212,7 @@ export default {
                     link.download = 'etiquette_dpe.jpeg';
                     link.href = dataUrl;
                     link.click();
-                    acc.exportMode = 'active';
+                    acc.setExportMode('active');
                 })
                 .catch(function (error) {
                     console.error('oops, something went wrong!', error);
@@ -322,6 +328,7 @@ export default {
     .custom_unite {
         font-size: 8px;
         font-weight: bold;
+        text-align: right;
     }
 
     .number_slider {

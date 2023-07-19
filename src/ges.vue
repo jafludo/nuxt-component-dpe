@@ -20,7 +20,7 @@
             <div class="legend_top_r" style="font-size: 12px;">
                 {{ typeBatiment }}
             </div>
-            <div style="position: fixed;">
+            <div style="width:4rem">
                 <div class="space_beetweenges"></div>
                 <div class="grp-et">
                     <div class="triangle-leftcode" :style="'border-right: 18px solid black;'"></div>
@@ -166,47 +166,54 @@ export default {
     destroyed() {
     },
     mounted() {
-        //Value
-        let gesfind = this.type ? this.assocGES.find(ass => ass.type == this.type) : this.ges;
-        this.type ? this.ges = this[gesfind.ref] : this.ges;
-        this.heightCell = (document.getElementById('ges_div').offsetHeight / this[gesfind.ref].length) - 12;
-        gesfind ? this.title_haut = gesfind.title_haut : '';
-        gesfind ? this.title_bas = gesfind.title_bas : '';
-        gesfind ? this.typeBatiment = gesfind.typeBatiment : '';
-        let gesrange = this.ges.find(item => item.minrange <= this.value && item.maxrange >= this.value);
-        gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
-        this.widthDaron = document.getElementById('ges_div').offsetWidth - 24;
-        let DynamicHeight = (gesrange.index * this.heightCell) + 5 * gesrange.index;
-        var r = document.querySelector(':root');
-        r.style.setProperty('--heightGES', DynamicHeight + 24 + 'px');
-        r.style.setProperty('--heightCellGES', this.heightCell + 'px');
-        r.style.setProperty('--heightTriangleGES', this.heightCell / 2 + 'px');
-
-        //Objectif
-        if (this.objectifs) {
-            let gesrangeObj = this.ges.find(item => item.minrange <= parseFloat(this.objectifs[this.indexActif].value) && item.maxrange >= parseFloat(this.objectifs[this.indexActif].value));
-            gesrangeObj == undefined ? gesrangeObj = this.ges[this.dgespe.length - 1] : '';
-            let DynamicHeightObj = (gesrangeObj.index * this.heightCell) + 4 * gesrangeObj.index;
+        if (typeof window !== 'undefined') {
+            //Value
+            let gesfind = this.type ? this.assocGES.find(ass => ass.type == this.type) : this.ges;
+            this.type ? this.ges = this[gesfind.ref] : this.ges;
+            this.heightCell = (document.getElementById('ges_div').offsetHeight / this[gesfind.ref].length) - 12;
+            gesfind ? this.title_haut = gesfind.title_haut : '';
+            gesfind ? this.title_bas = gesfind.title_bas : '';
+            gesfind ? this.typeBatiment = gesfind.typeBatiment : '';
+            let gesrange = this.ges.find(item => item.minrange <= this.value && item.maxrange >= this.value);
+            gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
+            this.widthDaron = document.getElementById('ges_div').offsetWidth - 24;
+            let DynamicHeight = (gesrange.index * this.heightCell) + 6 * gesrange.index;
             var r = document.querySelector(':root');
-            r.style.setProperty('--heightGESobj', DynamicHeightObj + 24 + 'px');
+            r.style.setProperty('--heightGES', DynamicHeight + 24 + 'px');
+            r.style.setProperty('--heightCellGES', this.heightCell + 'px');
+            r.style.setProperty('--heightTriangleGES', this.heightCell / 2 + 'px');
+
+            //Objectif
+            if (this.objectifs) {
+                let gesrangeObj = this.ges.find(item => item.minrange <= parseFloat(this.objectifs[this.indexActif].value) && item.maxrange >= parseFloat(this.objectifs[this.indexActif].value));
+                gesrangeObj == undefined ? gesrangeObj = this.ges[this.dgespe.length - 1] : '';
+                let DynamicHeightObj = (gesrangeObj.index * this.heightCell) + 4 * gesrangeObj.index;
+                var r = document.querySelector(':root');
+                r.style.setProperty('--heightGESobj', DynamicHeightObj + 24 + 'px');
+            }
         }
     },
     computed: {
     },
     methods: {
+        getExportMode: function () {
+            return this.exportMode
+        },
+        setExportMode: function (mode) {
+            this.exportMode = mode;
+        },
         exporttopng() {
             var node = document.querySelector("#ges_div");
             let acc = this;
-            this.exportMode = ''
             htmlToImage.toPng(node)
                 .then(function (dataUrl) {
                     var link = document.createElement('a');
                     var img = new Image();
                     img.src = dataUrl;
-                    link.download = 'etiquette.jpeg';
+                    link.download = 'etiquette_ges.jpeg';
                     link.href = dataUrl;
                     link.click();
-                    acc.exportMode = 'active'
+                    acc.setExportMode('active');
                 })
                 .catch(function (error) {
                     console.error('oops, something went wrong!', error);
@@ -317,6 +324,7 @@ export default {
     .custom_unite {
         font-size: 9px;
         font-weight: bold;
+        text-align: right;
     }
 
     .space_beetweengesobj {
