@@ -364,6 +364,7 @@ export default {
         bottom: 0;
         position: absolute;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
     }
 
@@ -424,6 +425,7 @@ export default {
         right: 0;
         z-index: -2;
     }
+
 
 }
 </style>
