@@ -177,10 +177,10 @@ export default {
             let gesrange = this.ges.find(item => item.minrange <= this.value && item.maxrange >= this.value);
             gesrange == undefined ? gesrange = this.ges[this.ges.length - 1] : '';
             this.widthDaron = document.getElementById('ges_div').offsetWidth - 24;
-            let DynamicHeight = (gesrange.index * this.heightCell) + 6 * gesrange.index;
+            let DynamicHeight = (gesrange.index * this.heightCell) + 4 * gesrange.index;
             var r = document.querySelector(':root');
             r.style.setProperty('--heightGES', DynamicHeight + 24 + 'px');
-            r.style.setProperty('--heightCellGES', this.heightCell + 'px');
+            r.style.setProperty('--heightCellGES', this.heightCell - 1.6 + 'px');
             r.style.setProperty('--heightTriangleGES', this.heightCell / 2 + 'px');
 
             //Objectif
@@ -365,7 +365,7 @@ export default {
         position: absolute;
         justify-content: space-between;
         width: 100%;
-        align-items: flex-end;
+        align-items: center;
     }
 
     .export_div {
@@ -424,12 +424,6 @@ export default {
         position: absolute;
         right: 0;
         z-index: -2;
-    }
-
-    .export_div {
-        cursor: pointer;
-        right: 0;
-        margin-right: 8px;
     }
 }
 </style>
