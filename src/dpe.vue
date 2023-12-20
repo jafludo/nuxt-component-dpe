@@ -134,6 +134,15 @@ export default {
                 { text: "541 à 750", letter: "F", color: "#fc9935", width: '85%', colortext: 'black', minrange: 541, maxrange: 750.99, min: '11.25rem', index: 5 },
                 { text: "> 750", letter: "G", color: "#fc0205", width: '100%', colortext: 'white', minrange: 750, maxrange: 9999999999.99, min: '13.5rem', index: 6 },
             ],
+            dpecentre_commerciaux: [
+                { text: "≤ 80", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 80.0, min: 0, index: 0 },
+                { text: "81 à 120", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 81, maxrange: 120.0, min: '2.25rem', index: 1 },
+                { text: "121 à 180", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 121, maxrange: 180.0, min: '4.5rem', index: 2 },
+                { text: "181 à 230", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 181, maxrange: 230.0, min: '6.75rem', index: 3 },
+                { text: "231 à 330", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 231, maxrange: 330.0, min: '9rem', index: 4 },
+                { text: "331 à 450", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 331, maxrange: 450.0, min: '11.25rem', index: 5 },
+                { text: "> 450", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 450, maxrange: 99999999.99, min: '13.5rem', index: 6 },
+            ],
             dpeOccContinue: [
                 { text: "≤ 100", letter: "A", color: "#319834", width: '35%', colortext: 'black', minrange: 0, maxrange: 100.99, min: 0, index: 0 },
                 { text: "101 à 210", letter: "B", color: "#33cc31", width: '45%', colortext: 'black', minrange: 101, maxrange: 210.99, min: '2.25rem', index: 1 },
@@ -148,6 +157,7 @@ export default {
                 { type: 'tertiaire', ref: 'dpeTertiaire', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment' },
                 { type: 'public', ref: 'dpePublic', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment' },
                 { type: 'bureaux', ref: 'dpeBureaux', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment' },
+                { type: 'centre_commerciaux', ref: 'dpecentre_commerciaux', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Bâtiment' },
                 { type: 'OccContinue', ref: 'dpeOccContinue', title_haut: 'Bâtiment économe', title_bas: 'Bâtiment énergivore', typeBatiment: 'Bâtiment' },
             ],
             widthDaron: 0,

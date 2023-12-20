@@ -133,6 +133,15 @@ export default {
                 { text: "101 à 145", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 101, maxrange: 145.99, min: '11.25rem', index: 5 },
                 { text: "> 145", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 145, maxrange: 99999999.99, min: '13.5rem', index: 6 },
             ],
+            gescentre_commerciaux: [
+                { text: "≤ 10", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 10.0, min: 0, index: 0 },
+                { text: "11 à 15", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 11, maxrange: 15.0, min: '2.25rem', index: 1 },
+                { text: "16 à 25", letter: "C", color: "#d6aaf4", width: '50%', colortext: 'black', minrange: 16, maxrange: 25.0, min: '4.5rem', index: 2 },
+                { text: "26 à 35", letter: "D", color: "#cc93f4", width: '60%', colortext: 'black', minrange: 26, maxrange: 35.0, min: '6.75rem', index: 3 },
+                { text: "36 à 55", letter: "E", color: "#bb72f3", width: '70%', colortext: 'black', minrange: 36, maxrange: 55.0, min: '9rem', index: 4 },
+                { text: "71 à 95", letter: "F", color: "#a94cee", width: '80%', colortext: 'black', minrange: 71, maxrange: 95.0, min: '11.25rem', index: 5 },
+                { text: "> 95", letter: "G", color: "#8b1ae1", width: '90%', colortext: 'white', minrange: 95, maxrange: 99999999.99, min: '13.5rem', index: 6 },
+            ],
             gesOccContinue: [
                 { text: "≤ 12", letter: "A", color: "#f2eff4", width: '30%', colortext: 'black', minrange: 0, maxrange: 12.99, min: 0, index: 0 },
                 { text: "13 à 30", letter: "B", color: "#dfc1f7", width: '40%', colortext: 'black', minrange: 13, maxrange: 30.99, min: '2.25rem', index: 1 },
@@ -147,6 +156,7 @@ export default {
                 { type: 'tertiaire', ref: 'gesTertiaire', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Bâtiment' },
                 { type: 'public', ref: 'gesPublic', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Bâtiment' },
                 { type: 'bureaux', ref: 'gesBureaux', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Bâtiment' },
+                { type: 'centre_commerciaux', ref: 'gescentre_commerciaux', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Bâtiment' },
                 { type: 'OccContinue', ref: 'gesOccContinue', title_haut: 'Faible émission de GES', title_bas: 'Forte émission de GES', typeBatiment: 'Bâtiment' },
             ],
             widthDaron: 0,
