@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="div_right">
-            <div class="legend_top_r" style="font-size: 13px;">
+            <div class="legend_top_r" style="font-size: 13px;position:absolute;">
                 {{ typeBatiment }}
             </div>
             <div style="width:5rem">
